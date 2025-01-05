@@ -2,20 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-base-200 text-base-content min-h-screen;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .hero-gradient {
+    @apply bg-gradient-to-br from-primary/20 via-base-100 to-secondary/20;
+  }
+
+  .card-gradient {
+    @apply bg-gradient-to-br from-base-100/50 to-base-200/50 backdrop-blur-sm;
+  }
+
+  .animated-border-card {
+    @apply relative p-[1px] bg-gradient-to-r from-primary via-secondary to-accent 
+           bg-[length:200%_100%] animate-border;
+  }
+
+  .glow-effect {
+    @apply relative overflow-hidden;
+  }
+
+  .glow-effect::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent
+           translate-x-[-100%] animate-glow;
+  }
+}
+
+@keyframes border-animation {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes glow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@layer utilities {
+  .animate-border {
+    animation: border-animation 3s linear infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s linear infinite;
+  }
 }
