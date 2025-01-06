@@ -37,12 +37,12 @@ const skillCategories = [
     ],
   },
   {
-    title: 'Backend & Infrastructure',
+    title: 'CMS & Infrastructure',
     skills: [
-      { name: 'Express.js', level: 75 },
-      { name: 'MongoDB', level: 70 },
-      { name: 'AWS', level: 75 },
-      { name: 'CI/CD', level: 80 },
+      { name: 'firebase', level: 75 },
+      { name: 'Headless CMS/WordPress', level: 70 },
+      { name: 'AWS (CloudFront, S3)', level: 75 },
+      { name: 'GitHub Actions, BitBucket Pipelines', level: 80 },
     ],
   },
 ];
