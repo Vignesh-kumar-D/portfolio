@@ -94,7 +94,8 @@ const projects: Project[] = [
     title: 'Eat & Chill Bot',
     description:
       'Slack bot that sparks food debates by collecting unpopular food opinions, utilizing serverless architecture and Notion integration.',
-    image: '/eat-chill.webp',
+    image:
+      'https://github.com/user-attachments/assets/adb3a4c6-ac1f-4326-b8c0-e9fb3a939442',
     githubLink: 'https://github.com/Vignesh-kumar-D/eat-chill',
     technologies: [
       { name: 'Node.js', color: 'text-green-600' },

@@ -218,12 +218,22 @@ const Hero = () => {
           >
             <motion.button
               className="btn btn-primary btn-lg gap-2"
+              onClick={() => {
+                const element = document.querySelector('#experience');
+                element?.scrollIntoView({ behavior: 'smooth' });
+              }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               View My Work <ArrowDownIcon />
             </motion.button>
             <motion.button
+              onClick={() =>
+                window.open(
+                  'https://drive.google.com/file/d/1KYfxW3ra1L35Tow7bAEEytooE2CjWuH0/view?usp=sharing',
+                  '_blank'
+                )
+              }
               className="btn btn-outline btn-primary btn-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

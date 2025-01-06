@@ -101,7 +101,7 @@ const Skills = () => {
               {/* Placeholder for photo - replace src with your photo */}
               <div className="w-64 h-64 mx-auto rounded-full overflow-hidden border-4 border-primary/20 glow-effect">
                 <img
-                  src="/api/placeholder/400/400" // Replace with your photo
+                  src="/images/vignesh_photo.png" // Replace with your photo
                   alt="Vignesh Kumar"
                   className="w-full h-full object-cover"
                 />
