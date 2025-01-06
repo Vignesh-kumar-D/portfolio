@@ -8,7 +8,9 @@ import Skills from '@/components/Skills';
 export default function Home() {
   return (
     <div>
-      <Hero />
+      <section id="info" className="min-h-screen">
+        <Hero />
+      </section>
       {/* Placeholder sections to be implemented */}
       <section id="skills" className="min-h-screen">
         <Skills />

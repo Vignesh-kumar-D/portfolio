@@ -5,7 +5,6 @@ import { motion, useScroll } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
 
 const navItems = [
-  { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
@@ -44,13 +43,14 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Name */}
-          <motion.div
+          <motion.button
+            onClick={() => handleNavClick('#info')}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <span className="text-xl font-bold text-primary">VK</span>
-          </motion.div>
+          </motion.button>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
