@@ -100,6 +100,8 @@ const Skills = () => {
             <div className="relative">
               {/* Placeholder for photo - replace src with your photo */}
               <div className="w-64 h-64 mx-auto rounded-full overflow-hidden border-4 border-primary/20 glow-effect">
+                {/* eslint-disable-next-line @next/next/no-img-element
+                 */}
                 <img
                   src="/images/vignesh_photo.png" // Replace with your photo
                   alt="Vignesh Kumar"
