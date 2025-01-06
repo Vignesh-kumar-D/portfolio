@@ -80,16 +80,16 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
       <div className="flex-1 pb-16">
         <div className="card bg-base-200/50 backdrop-blur-sm shadow-xl hover:shadow-primary/10 transition-all duration-300">
           <div className="card-body">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
-              <div className="flex flex-col">
-                <h3 className="text-xl font-bold text-primary">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
+              <div>
+                <h3 className="card-title text-xl text-primary">
                   {experience.title}
                 </h3>
                 <p className="text-lg text-secondary">{experience.company}</p>
               </div>
-              <span className="badge badge-primary badge-outline p-3">
+              <div className="badge badge-primary badge-outline min-h-fit h-auto px-3 py-2 whitespace-normal text-center">
                 {experience.period}
-              </span>
+              </div>
             </div>
 
             <ul className="flex flex-col gap-3">

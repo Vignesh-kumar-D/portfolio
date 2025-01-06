@@ -100,7 +100,7 @@ const projects: Project[] = [
     technologies: [
       { name: 'Node.js', color: 'text-green-600' },
       { name: 'Slack API', color: 'text-purple-500' },
-      { name: 'Notion API', color: 'text-gray-900' },
+      { name: 'Notion API', color: 'text-white-50' },
       { name: 'Netlify', color: 'text-teal-500' },
     ],
     features: [
