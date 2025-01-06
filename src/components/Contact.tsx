@@ -250,7 +250,7 @@ const Contact = () => {
           </motion.div>
 
           {/* Contact Information */}
-          <div className="space-y-6">
+          <div className="space-y-6 lg:my-auto">
             <ContactCard
               icon={<FiMail />}
               title="Email"
