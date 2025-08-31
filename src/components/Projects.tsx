@@ -20,9 +20,67 @@ interface Project {
   chromeLink?: string;
   technologies: Technology[];
   features: string[];
+  isProfessional?: boolean;
+  teamSize?: string;
+  role?: string;
 }
 
-const projects: Project[] = [
+const professionalProjects: Project[] = [
+  {
+    id: 'enterprise-pos',
+    title: 'Enterprise POS System',
+    description:
+      'Lead developer for POS application deployed across 800+ stores with 99.9% uptime and offline-first workflows handling $50K+ daily transactions.',
+    image:
+      'https://github.com/user-attachments/assets/5ae84663-9bfc-4004-9623-006c742f3a96',
+    liveLink: 'https://d-vignesh-kumar.netlify.app',
+    githubLink: '', // Professional project - no public access
+    technologies: [
+      { name: 'React', color: 'text-blue-500' },
+      { name: 'React Native', color: 'text-blue-600' },
+      { name: 'Node.js', color: 'text-green-600' },
+      { name: 'PostgreSQL', color: 'text-blue-700' },
+      { name: 'WebSocket', color: 'text-purple-500' },
+    ],
+    features: [
+      'Serving million+ customers daily',
+      '99.9% uptime with offline-first workflows',
+      'Integrated 5+ payment gateways',
+      'Real-time inventory sync reducing stock discrepancies by 45%',
+      'Boosted Core Web Vitals and SEO with Next.js edge SSR',
+    ],
+    isProfessional: true,
+    teamSize: '8+ developers',
+    role: 'Lead Developer',
+  },
+  {
+    id: 'shopup-cms',
+    title: 'ShopUp CMS Platform',
+    description:
+      'Senior developer contributing to enterprise CMS supporting 50K+ SKUs with admin panel for 200+ daily users; integrated GraphQL with React and real-time analytics dashboards.',
+    image:
+      'https://github.com/legendvi/module_fedration_tierOneSaas/assets/41253273/aa020476-7868-40de-98b5-fbcfc23c07bc',
+    githubLink: '', // Professional project - no public access
+    technologies: [
+      { name: 'React', color: 'text-blue-500' },
+      { name: 'GraphQL', color: 'text-pink-500' },
+      { name: 'Module Federation', color: 'text-blue-400' },
+      { name: 'Real-time Analytics', color: 'text-green-500' },
+    ],
+    features: [
+      '50K+ SKUs management',
+      '200+ daily active users',
+      'Real-time analytics dashboards',
+      'Role-based access control (5 tiers)',
+      'Reduced reporting time by 60%',
+    ],
+    isProfessional: true,
+    teamSize: '12+ developers',
+    role: 'Senior Developer',
+  },
+];
+
+const personalProjects: Project[] = [
   {
     id: 'agro-fertilizer',
     title: 'Agro: Fertilizer Company Management',
@@ -34,7 +92,7 @@ const projects: Project[] = [
     githubLink: 'https://github.com/vignesh-kumar-d/fertilizer-app',
     technologies: [
       { name: 'Next.js 15', color: 'text-black' },
-      { name: 'React 19', color: 'text-blue-500' },
+      { name: 'React 19', color: 'text-blue-600' },
       { name: 'TypeScript', color: 'text-blue-600' },
       { name: 'Firebase', color: 'text-yellow-500' },
       { name: 'Tailwind CSS', color: 'text-cyan-500' },
@@ -47,6 +105,7 @@ const projects: Project[] = [
       'Progressive Web App with offline support',
       'Real-time data sync and image management',
     ],
+    isProfessional: false,
   },
   {
     id: 'enterprise-pos',
@@ -286,6 +345,16 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({
             <FiFolder className="w-5 h-5" />
             {project.title}
           </h3>
+          {project.isProfessional && (
+            <div className="flex gap-2 mb-2">
+              <span className="badge badge-primary badge-sm">
+                {project.role}
+              </span>
+              <span className="badge badge-outline badge-sm">
+                {project.teamSize}
+              </span>
+            </div>
+          )}
           <p className="text-base-content/80">{project.description}</p>
 
           <div className="flex flex-wrap gap-2 mt-4">
@@ -327,14 +396,30 @@ const Projects = () => {
     threshold: 0.1,
     triggerOnce: true,
   });
-  const [activeTab, setActiveTab] = useState<'notable' | 'previous'>('notable');
+  const [activeTab, setActiveTab] = useState<
+    'professional' | 'personal' | 'previous'
+  >('professional');
 
   const tabs = [
-    { id: 'notable', label: 'Notable Projects', count: projects.length },
+    {
+      id: 'professional',
+      label: 'Professional Experience',
+      count: professionalProjects.length,
+    },
+    {
+      id: 'personal',
+      label: 'Personal Projects',
+      count: personalProjects.length,
+    },
     { id: 'previous', label: 'Previous Work', count: oldProjects.length },
   ];
 
-  const currentProjects = activeTab === 'notable' ? projects : oldProjects;
+  const currentProjects =
+    activeTab === 'professional'
+      ? professionalProjects
+      : activeTab === 'personal'
+      ? personalProjects
+      : oldProjects;
 
   return (
     <section className="min-h-screen py-20 bg-base-100">
@@ -349,9 +434,10 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-base-content max-w-2xl mx-auto">
-            A showcase of my key projects, demonstrating expertise in enterprise
-            POS systems, micro-frontend architecture, full-stack development,
-            and innovative Chrome extensions.
+            A showcase of my professional experience and personal projects,
+            demonstrating expertise in enterprise POS systems, micro-frontend
+            architecture, full-stack development, and innovative Chrome
+            extensions.
           </p>
         </motion.div>
 
@@ -371,7 +457,11 @@ const Projects = () => {
                     ? 'tab-active bg-primary text-primary-content'
                     : ''
                 }`}
-                onClick={() => setActiveTab(tab.id as 'notable' | 'previous')}
+                onClick={() =>
+                  setActiveTab(
+                    tab.id as 'professional' | 'personal' | 'previous'
+                  )
+                }
               >
                 {tab.label}
                 <span className="badge badge-sm ml-2">{tab.count}</span>
