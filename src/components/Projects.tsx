@@ -16,7 +16,7 @@ interface Project {
   description: string;
   image: string;
   liveLink?: string;
-  githubLink: string;
+  githubLink?: string;
   chromeLink?: string;
   technologies: Technology[];
   features: string[];
@@ -32,8 +32,8 @@ const professionalProjects: Project[] = [
     description:
       'Lead developer for POS application deployed across 800+ stores with 99.9% uptime and offline-first workflows handling $50K+ daily transactions.',
     image:
-      'https://github.com/user-attachments/assets/5ae84663-9bfc-4004-9623-006c742f3a96',
-    liveLink: 'https://d-vignesh-kumar.netlify.app',
+      'https://cdn.cookielaw.org/logos/11b3f084-5233-4fd6-8e5b-b89bec8652a8/85dce925-5fd4-4d84-b3ed-5fc710429e86/e8f07cea-30ef-4ac5-8851-0654e13850b6/thumbnail_VS&Co_Logo_Primary_Pink.png',
+    liveLink: 'https://www.victoriassecret.com/',
     githubLink: '', // Professional project - no public access
     technologies: [
       { name: 'React', color: 'text-blue-500' },
@@ -59,8 +59,9 @@ const professionalProjects: Project[] = [
     description:
       'Senior developer contributing to enterprise CMS supporting 50K+ SKUs with admin panel for 200+ daily users; integrated GraphQL with React and real-time analytics dashboards.',
     image:
-      'https://github.com/legendvi/module_fedration_tierOneSaas/assets/41253273/aa020476-7868-40de-98b5-fbcfc23c07bc',
+      'https://cdn.prod.website-files.com/6538a2c4ccf1fed5a7d6e311/661e20ec03673cb2f41ff4c2_ShopUp-open-graph.jpg',
     githubLink: '', // Professional project - no public access
+    liveLink: 'https://cms.shopup.com/',
     technologies: [
       { name: 'React', color: 'text-blue-500' },
       { name: 'GraphQL', color: 'text-pink-500' },
@@ -80,86 +81,14 @@ const professionalProjects: Project[] = [
   },
 ];
 
-const personalProjects: Project[] = [
-  {
-    id: 'agro-fertilizer',
-    title: 'Agro: Fertilizer Company Management',
-    description:
-      'Comprehensive web application for fertilizer companies to manage farmer relationships, track crop health, record sales visits, manage purchases, and monitor revenue and lending activities.',
-    image:
-      'https://github.com/user-attachments/assets/5ae84663-9bfc-4004-9623-006c742f3a96',
-    liveLink: 'https://fertiliser-app.netlify.app/',
-    githubLink: 'https://github.com/vignesh-kumar-d/fertilizer-app',
-    technologies: [
-      { name: 'Next.js 15', color: 'text-black' },
-      { name: 'React 19', color: 'text-blue-600' },
-      { name: 'TypeScript', color: 'text-blue-600' },
-      { name: 'Firebase', color: 'text-yellow-500' },
-      { name: 'Tailwind CSS', color: 'text-cyan-500' },
-      { name: 'PWA', color: 'text-blue-500' },
-    ],
-    features: [
-      'Farmer management with crop health monitoring',
-      'Sales tracking and revenue analytics dashboard',
-      'Role-based access control (Admin/Employee)',
-      'Progressive Web App with offline support',
-      'Real-time data sync and image management',
-    ],
-    isProfessional: false,
-  },
-  {
-    id: 'enterprise-pos',
-    title: 'Enterprise POS System',
-    description:
-      'POS application deployed with React and React Native across 800+ stores with 99.9% uptime and offline-first workflows handling $50K+ daily transactions.',
-    image:
-      'https://github.com/user-attachments/assets/5ae84663-9bfc-4004-9623-006c742f3a96',
-    liveLink: 'https://d-vignesh-kumar.netlify.app',
-    githubLink: 'https://github.com/vignesh-kumar-d',
-    technologies: [
-      { name: 'React', color: 'text-blue-500' },
-      { name: 'React Native', color: 'text-blue-600' },
-      { name: 'Node.js', color: 'text-green-600' },
-      { name: 'PostgreSQL', color: 'text-blue-700' },
-      { name: 'WebSocket', color: 'text-purple-500' },
-    ],
-    features: [
-      'Serving million+ customers daily',
-      '99.9% uptime with offline-first workflows',
-      'Integrated 5+ payment gateways',
-      'Real-time inventory sync reducing stock discrepancies by 45%',
-      'Boosted Core Web Vitals and SEO with Next.js edge SSR',
-    ],
-  },
-  {
-    id: 'shopup-cms',
-    title: 'ShopUp CMS Platform',
-    description:
-      'Supported 50K+ SKUs with admin panel for 200+ daily users; integrated GraphQL with React and real-time analytics dashboards.',
-    image:
-      'https://github.com/legendvi/module_fedration_tierOneSaas/assets/41253273/aa020476-7868-40de-98b5-fbcfc23c07bc',
-    githubLink: 'https://github.com/Vignesh-kumar-D/tierone',
-    technologies: [
-      { name: 'React', color: 'text-blue-500' },
-      { name: 'GraphQL', color: 'text-pink-500' },
-      { name: 'Module Federation', color: 'text-blue-400' },
-      { name: 'Real-time Analytics', color: 'text-green-500' },
-    ],
-    features: [
-      '50K+ SKUs management',
-      '200+ daily active users',
-      'Real-time analytics dashboards',
-      'Role-based access control (5 tiers)',
-      'Reduced reporting time by 60%',
-    ],
-  },
+const liveProjects: Project[] = [
   {
     id: 'zeno-app',
     title: 'Zeno – Zero-Based Budgeting App',
     description:
       'Full-stack Next.js application with serverless architecture designed for zero-based budgeting and group expense management.',
     image:
-      'https://github.com/user-attachments/assets/6b2730c0-2323-4ca8-96fb-f5b7a45d3ad6',
+      'https://github.com/user-attachments/assets/c0d3431f-bc7d-4f3d-aa10-2c7b385eb172',
     liveLink: 'https://finz-wizard.vercel.app/login',
     githubLink: 'https://github.com/Vignesh-kumar-D/finWizard',
     technologies: [
@@ -182,7 +111,7 @@ const personalProjects: Project[] = [
     description:
       'Chrome extension to combat short-form content addiction by blocking YouTube Shorts and Instagram Reels, helping users regain control of their attention.',
     image:
-      'https://github.com/user-attachments/assets/adb3a4c6-ac1f-4326-b8c0-e9fb3a939442',
+      'https://github.com/user-attachments/assets/6b2730c0-2323-4ca8-96fb-f5b7a45d3ad6',
     chromeLink: 'https://tinyurl.com/shorts-reels-blocker',
     githubLink: 'https://github.com/Vignesh-kumar-D/shorts_reel_blocker',
     technologies: [
@@ -199,9 +128,32 @@ const personalProjects: Project[] = [
       'Offline functionality',
     ],
   },
-];
-
-const oldProjects: Project[] = [
+  {
+    id: 'agro-fertilizer',
+    title: 'Agro: Fertilizer Company Management',
+    description:
+      'Comprehensive web application for fertilizer companies to manage farmer relationships, track crop health, record sales visits, manage purchases, and monitor revenue and lending activities.',
+    image:
+      'https://github.com/user-attachments/assets/32deaaf4-ad4d-4b8e-8e89-a2a0c34f6dee',
+    liveLink: 'https://fertiliser-app.netlify.app/',
+    githubLink: 'https://github.com/vignesh-kumar-d/fertilizer-app',
+    technologies: [
+      { name: 'Next.js 15', color: 'text-black' },
+      { name: 'React 19', color: 'text-blue-600' },
+      { name: 'TypeScript', color: 'text-blue-600' },
+      { name: 'Firebase', color: 'text-yellow-500' },
+      { name: 'Tailwind CSS', color: 'text-cyan-500' },
+      { name: 'PWA', color: 'text-blue-500' },
+    ],
+    features: [
+      'Farmer management with crop health monitoring',
+      'Sales tracking and revenue analytics dashboard',
+      'Role-based access control (Admin/Employee)',
+      'Progressive Web App with offline support',
+      'Real-time data sync and image management',
+    ],
+    isProfessional: false,
+  },
   {
     id: 'homesquare',
     title: 'HomeSquare Expense',
@@ -224,6 +176,9 @@ const oldProjects: Project[] = [
       'Receipt documentation upload',
     ],
   },
+];
+
+const demoProjects: Project[] = [
   {
     id: 'tierone',
     title: 'TierOne Microservices',
@@ -318,14 +273,16 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({
                   <FiExternalLink className="w-5 h-5" />
                 </a>
               )}
-              <a
-                href={project.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-circle btn-primary"
-              >
-                <FiGithub className="w-5 h-5" />
-              </a>
+              {project.githubLink && (
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-circle btn-primary"
+                >
+                  <FiGithub className="w-5 h-5" />
+                </a>
+              )}
               {project.chromeLink && (
                 <a
                   href={project.chromeLink}
@@ -397,7 +354,7 @@ const Projects = () => {
     triggerOnce: true,
   });
   const [activeTab, setActiveTab] = useState<
-    'professional' | 'personal' | 'previous'
+    'professional' | 'live-works' | 'demo'
   >('professional');
 
   const tabs = [
@@ -407,19 +364,19 @@ const Projects = () => {
       count: professionalProjects.length,
     },
     {
-      id: 'personal',
-      label: 'Personal Projects',
-      count: personalProjects.length,
+      id: 'live-works',
+      label: 'Live Works',
+      count: liveProjects.length,
     },
-    { id: 'previous', label: 'Previous Work', count: oldProjects.length },
+    { id: 'demo', label: 'Demo Projets', count: demoProjects.length },
   ];
 
   const currentProjects =
     activeTab === 'professional'
       ? professionalProjects
-      : activeTab === 'personal'
-      ? personalProjects
-      : oldProjects;
+      : activeTab === 'live-works'
+      ? liveProjects
+      : demoProjects;
 
   return (
     <section className="min-h-screen py-20 bg-base-100">
@@ -458,9 +415,7 @@ const Projects = () => {
                     : ''
                 }`}
                 onClick={() =>
-                  setActiveTab(
-                    tab.id as 'professional' | 'personal' | 'previous'
-                  )
+                  setActiveTab(tab.id as 'professional' | 'live-works' | 'demo')
                 }
               >
                 {tab.label}
