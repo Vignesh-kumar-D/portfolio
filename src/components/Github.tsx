@@ -168,12 +168,10 @@ const GitHub = () => {
               integration.
             </p>
           </motion.div>
-
           {/* Current Work Section */}
           <div className="max-w-4xl mx-auto mb-16">
             <CurrentWork />
           </div>
-
           {/* GitHub Stats */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             <StatCard
@@ -203,9 +201,8 @@ const GitHub = () => {
               />
             )}
           </div>
-
           {/* GitHub Activity Graph */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.4 }}
@@ -213,14 +210,14 @@ const GitHub = () => {
           >
             {/* eslint-disable-next-line @next/next/no-img-element
              */}
-            <img
-              width={100}
-              height={100}
-              src="https://github-readme-stats.vercel.app/api?username=Vignesh-kumar-D&show_icons=true&theme=radical"
-              alt="GitHub Stats"
-              className="w-full h-auto rounded-xl"
-            />
-          </motion.div>
+          {/* <img
+            width={100}
+            height={100}
+            src="https://github-readme-stats.vercel.app/api?username=Vignesh-kumar-D&show_icons=true&theme=radical"
+            alt="GitHub Stats"
+            className="w-full h-auto rounded-xl"
+          /> */}
+          {/* </motion.div>*/}
         </ParallaxSection>
       </div>
     </section>
