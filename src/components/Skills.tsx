@@ -121,11 +121,11 @@ const Skills = () => {
     <section className="relative min-h-screen py-20 bg-base-100">
       <CrossLines />
 
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
+      <div className="container mx-auto  px-4">
+        <div className="flex flex-col lg:flex-row gap-12 items-start">
           {/* Photo and Introduction */}
           <motion.div
-            className="lg:w-1/3"
+            className="lg:w-1/3 mt-16"
             initial={{ x: -100, opacity: 0 }}
             animate={inView ? { x: 0, opacity: 1 } : {}}
             transition={{ duration: 0.6 }}
@@ -153,7 +153,7 @@ const Skills = () => {
                   repeatType: 'reverse',
                 }}
               >
-                Frontend
+                Full-Stack
               </motion.div>
               <motion.div
                 className="absolute -bottom-4 -left-4 badge badge-secondary"
@@ -164,15 +164,16 @@ const Skills = () => {
                   repeatType: 'reverse',
                 }}
               >
-                React Expert
+                React & Node.js
               </motion.div>
             </div>
 
             <div className="mt-8 text-center lg:text-left">
               <h2 className="text-2xl font-bold mb-4">Technical Expertise</h2>
               <p className="text-base-content max-w-2xl mx-auto">
-                With ~6 years of experience, I&apos;ve developed expertise across the full-stack spectrum, 
-                from React ecosystem to backend services, cloud infrastructure, and emerging AI technologies.
+                With ~6 years of experience, I&apos;ve developed expertise
+                across the full-stack spectrum, from React ecosystem to backend
+                services, cloud infrastructure, and emerging AI technologies.
               </p>
             </div>
           </motion.div>
