@@ -17,32 +17,66 @@ const CrossLines = () => (
   </div>
 );
 
-const skillCategories = [
+const skills = [
   {
-    title: 'Frontend Core',
-    skills: [
+    category: 'Frontend',
+    technologies: [
       { name: 'React.js', level: 95 },
       { name: 'Next.js', level: 90 },
-      { name: 'TypeScript', level: 85 },
-      { name: 'React Native', level: 80 },
+      { name: 'React Native', level: 85 },
+      { name: 'TypeScript', level: 90 },
+      { name: 'JavaScript', level: 95 },
+      { name: 'HTML5/CSS3', level: 90 },
+      { name: 'PWAs', level: 80 },
     ],
   },
   {
-    title: 'Development & Testing',
-    skills: [
-      { name: 'Webpack', level: 85 },
-      { name: 'Module Federation', level: 90 },
-      { name: 'Jest', level: 80 },
-      { name: 'React Testing Library', level: 85 },
+    category: 'Backend & APIs',
+    technologies: [
+      { name: 'Node.js', level: 85 },
+      { name: 'Express.js', level: 80 },
+      { name: 'REST APIs', level: 90 },
+      { name: 'WebSocket', level: 75 },
+      { name: 'GraphQL', level: 70 },
     ],
   },
   {
-    title: 'CMS & Infrastructure',
-    skills: [
-      { name: 'firebase', level: 75 },
-      { name: 'Headless CMS/WordPress', level: 70 },
-      { name: 'AWS (CloudFront, S3)', level: 75 },
-      { name: 'GitHub Actions, BitBucket Pipelines', level: 80 },
+    category: 'Databases & Cloud',
+    technologies: [
+      { name: 'PostgreSQL', level: 80 },
+      { name: 'MongoDB', level: 75 },
+      { name: 'AWS Lambda', level: 75 },
+      { name: 'AWS S3/EC2', level: 70 },
+      { name: 'Vercel', level: 80 },
+    ],
+  },
+  {
+    category: 'State Management & Tools',
+    technologies: [
+      { name: 'Redux', level: 85 },
+      { name: 'Context API', level: 90 },
+      { name: 'Recoil', level: 75 },
+      { name: 'Module Federation', level: 80 },
+      { name: 'Webpack/Vite', level: 75 },
+    ],
+  },
+  {
+    category: 'Testing & DevOps',
+    technologies: [
+      { name: 'Jest/Vitest', level: 80 },
+      { name: 'React Testing Library', level: 75 },
+      { name: 'GitHub Actions', level: 80 },
+      { name: 'CI/CD', level: 85 },
+      { name: 'Sentry', level: 70 },
+    ],
+  },
+  {
+    category: 'AI/ML & Emerging',
+    technologies: [
+      { name: 'Generative AI', level: 65 },
+      { name: 'LLMs', level: 60 },
+      { name: 'Prompt Design', level: 70 },
+      { name: 'AI Integration', level: 65 },
     ],
   },
 ];
@@ -136,19 +170,18 @@ const Skills = () => {
 
             <div className="mt-8 text-center lg:text-left">
               <h2 className="text-2xl font-bold mb-4">Technical Expertise</h2>
-              <p className="text-base-content/80">
-                6+ years of expertise in building scalable web applications with
-                modern technologies. Specialized in React ecosystem and frontend
-                architecture.
+              <p className="text-base-content max-w-2xl mx-auto">
+                With ~6 years of experience, I&apos;ve developed expertise across the full-stack spectrum, 
+                from React ecosystem to backend services, cloud infrastructure, and emerging AI technologies.
               </p>
             </div>
           </motion.div>
 
           {/* Skills */}
           <div className="lg:w-2/3 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {skillCategories.map((category, categoryIndex) => (
+            {skills.map((category, categoryIndex) => (
               <motion.div
-                key={category.title}
+                key={category.category}
                 initial={{ y: 50, opacity: 0 }}
                 animate={inView ? { y: 0, opacity: 1 } : {}}
                 transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
@@ -156,9 +189,9 @@ const Skills = () => {
               >
                 <div className="card-body">
                   <h3 className="card-title text-primary mb-4">
-                    {category.title}
+                    {category.category}
                   </h3>
-                  {category.skills.map((skill, index) => (
+                  {category.technologies.map((skill, index) => (
                     <SkillBar key={skill.name} skill={skill} index={index} />
                   ))}
                 </div>

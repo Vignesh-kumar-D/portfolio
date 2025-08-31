@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FiMail, FiGithub, FiLinkedin, FiSend } from 'react-icons/fi';
+import { FiMail, FiSend, FiPhone, FiMapPin, FiGlobe } from 'react-icons/fi';
 
 interface ContactFormData {
   name: string;
@@ -212,26 +212,89 @@ const ContactCard: React.FC<{
 };
 
 const Contact = () => {
-  const [ref, inView] = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
+  // const [formData, setFormData] = useState({
+  //   name: '',
+  //   email: '',
+  //   subject: '',
+  //   message: '',
+  // });
+
+  // const [isSubmitting, setIsSubmitting] = useState(false);
+  // const [submitStatus, setSubmitStatus] = useState<
+  //   'idle' | 'success' | 'error'
+  // >('idle');
+
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+  //   setSubmitStatus('idle');
+
+  //   try {
+  //     const response = await fetch('/api/sendEmail', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
+
+  //     if (response.ok) {
+  //       setSubmitStatus('success');
+  //       setFormData({ name: '', email: '', subject: '', message: '' });
+  //     } else {
+  //       setSubmitStatus('error');
+  //     }
+  //   } catch (error) {
+  //     setSubmitStatus('error');
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
+
+  const contactInfo = [
+    {
+      icon: <FiMail className="w-6 h-6" />,
+      label: 'Email',
+      value: 'dvigneshkumar3@gmail.com',
+      link: 'mailto:dvigneshkumar3@gmail.com',
+    },
+    {
+      icon: <FiPhone className="w-6 h-6" />,
+      label: 'Phone',
+      value: '+91 8903831083',
+      link: 'tel:+918903831083',
+    },
+    {
+      icon: <FiMapPin className="w-6 h-6" />,
+      label: 'Location',
+      value: 'Bangalore, India',
+      link: '#',
+    },
+    {
+      icon: <FiGlobe className="w-6 h-6" />,
+      label: 'Portfolio',
+      value: 'd-vignesh-kumar.netlify.app',
+      link: 'https://d-vignesh-kumar.netlify.app',
+    },
+  ];
 
   return (
-    <section className="min-h-screen py-20 bg-base-100">
+    <section id="contact" className="min-h-screen py-20 bg-base-100">
       <div className="container mx-auto px-4">
         <motion.div
-          ref={ref}
           initial={{ y: -50, opacity: 0 }}
-          animate={inView ? { y: 0, opacity: 1 } : {}}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Get In Touch
+            Let&apos;s Connect
           </h2>
           <p className="text-base-content max-w-2xl mx-auto">
-            I am always open to new opportunities and collaborations. Feel free
-            to reach out if you would like to work together!
+            Full-Stack Engineer with ~6 years of experience building scalable
+            web and mobile applications. Expertise in React.js, Next.js,
+            Node.js/Express, PostgreSQL, and AWS. Let&apos;s discuss how we can
+            work together!
           </p>
         </motion.div>
 
@@ -239,7 +302,7 @@ const Contact = () => {
           {/* Contact Form */}
           <motion.div
             initial={{ x: -50, opacity: 0 }}
-            animate={inView ? { x: 0, opacity: 1 } : {}}
+            whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
             className="card bg-base-200 shadow-xl"
           >
@@ -251,27 +314,16 @@ const Contact = () => {
 
           {/* Contact Information */}
           <div className="space-y-6 lg:my-auto">
-            <ContactCard
-              icon={<FiMail />}
-              title="Email"
-              value="dvigneshkumar3@gmail.com"
-              link="mailto:dvigneshkumar3@gmail.com"
-              delay={0.1}
-            />
-            <ContactCard
-              icon={<FiGithub />}
-              title="GitHub"
-              value="Vignesh-kumar-D"
-              link="https://github.com/Vignesh-kumar-D"
-              delay={0.2}
-            />
-            <ContactCard
-              icon={<FiLinkedin />}
-              title="LinkedIn"
-              value="Connect with me"
-              link="https://linkedin.com/in/d-vignesh-kumar"
-              delay={0.3}
-            />
+            {contactInfo.map((info, index) => (
+              <ContactCard
+                key={info.label}
+                icon={info.icon}
+                title={info.label}
+                value={info.value}
+                link={info.link}
+                delay={0.1 + index * 0.1}
+              />
+            ))}
           </div>
         </div>
       </div>

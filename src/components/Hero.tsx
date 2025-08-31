@@ -107,7 +107,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="hero min-h-screen hero-gradient overflow-hidden">
+    <div id="hero" className="hero min-h-screen hero-gradient overflow-hidden">
       {/* Only render background animations on client side */}
       {mounted && (
         <div className="absolute inset-0 overflow-hidden">
@@ -152,7 +152,7 @@ const Hero = () => {
             variants={item}
             className="text-xl md:text-2xl mb-12 text-base-content/80"
           >
-            Senior Frontend Engineer at Victoria&apos;s Secret & Co
+            Frontend Development Engineer at Victoria&apos;s Secret & Co
           </motion.p>
 
           {/* Stats Cards */}
@@ -161,9 +161,9 @@ const Hero = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
           >
             {[
-              { metric: '40%', desc: 'Reduced Page Load Time' },
-              { metric: '60%', desc: 'Improved Data Fetch Speed' },
-              { metric: '35%', desc: 'Dev Time Reduction' },
+              { metric: '7s → 2s', desc: 'Cart Operations Optimization' },
+              { metric: '99.9%', desc: 'POS System Uptime' },
+              { metric: '25%', desc: 'Team Delivery Speed Increase' },
             ].map((stat, index) => (
               <motion.div
                 key={index}

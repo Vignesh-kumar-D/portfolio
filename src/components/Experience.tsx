@@ -15,23 +15,25 @@ const experiences = [
   {
     title: 'Frontend Development Engineer',
     company: "Victoria's Secret & Co",
-    period: 'December 2023 - Present',
+    period: 'December 2023 - August 2025',
     achievements: [
-      'Collaborated with design teams to create visually appealing, accessible, and responsive user interfaces',
-      'Reduced page load time by 40% through code splitting and lazy loading',
-      'Developed mobile point-of-sale applications processing $50K+ daily transactions',
-      'Mentored 5 junior developers, resulting in a 25% increase in team feature delivery speed',
+      'Developed POS application from scratch with React, React Native, Node.js/Express, and PostgreSQL serving million+ customers daily',
+      'Architected Context Provider-based state management reducing re-renders and streamlined common component conventions for scalability',
+      'Implemented Node.js WebSocket service fetching product data on barcode scans, cutting lookup latency significantly',
+      'Optimized cart operations from 7s → 2s via memoization and state restructuring; enhanced TypeScript strictness and CI testing (80%+ coverage)',
+      'Identified and resolved critical performance and security gaps; raised PRs, documented improvements, and gained leadership approval',
+      'Mentored 5 junior developers, established coding standards, and improved delivery speed by 25%',
     ],
   },
   {
-    title: 'SDE-I',
+    title: 'SDE-II',
     company: 'ShopUp',
     period: 'March 2022 - December 2023',
     achievements: [
-      'Architected admin panels using Next.js and React Query, reducing data fetch times by 60%',
-      'Implemented micro-frontend architecture with Module Federation',
-      'Built a component library used by 6 teams, cutting development time by 35%',
-      'Automated CI/CD pipelines, reducing deployment time from 2 hours to 30 minutes',
+      'Engineered component library used by 6+ teams, reducing development time by 35%',
+      'Orchestrated micro-frontend architecture via Module Federation enabling 5+ teams to collaborate independently',
+      'Automated CI/CD pipelines reducing release cycles from 2 hours → 30 minutes with zero downtime',
+      'Redesigned real-time analytics dashboards and engineered role-based access control (5 tiers) improving reporting by 60%',
     ],
   },
   {
@@ -39,9 +41,9 @@ const experiences = [
     company: 'Cognizant Technology Solutions',
     period: 'May 2019 - March 2022',
     achievements: [
-      'Optimized React components and implemented caching strategies, reducing API response times by 40%',
-      'Improved page load time by 45% by reducing bundle size',
-      'Maintained a 95% sprint completion rate across 8 consecutive quarters',
+      'Reduced API latency by 30% via caching and React hook optimization',
+      'Decreased JS bundle size by 60% using tree-shaking, minification, and code splitting, boosting initial rendering by 45%',
+      'Delivered 95% of sprint goals consistently across 8 quarters maintaining code quality standards',
     ],
   },
 ] as const;
@@ -144,11 +146,11 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
 const getTechStack = (company: string): string[] => {
   switch (company) {
     case "Victoria's Secret & Co":
-      return ['React.js', 'Next.js', 'TypeScript', 'AWS'];
+      return ['React.js', 'React Native', 'Node.js', 'Express.js', 'PostgreSQL', 'WebSocket'];
     case 'ShopUp':
-      return ['React.js', 'Module Federation', 'React Query', 'AWS'];
+      return ['React.js', 'Module Federation', 'Component Library', 'CI/CD', 'Analytics'];
     case 'Cognizant Technology Solutions':
-      return ['React.js', 'Redux', 'JavaScript', 'REST APIs'];
+      return ['React.js', 'JavaScript', 'Caching', 'Bundle Optimization', 'REST APIs'];
     default:
       return [];
   }

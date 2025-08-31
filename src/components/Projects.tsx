@@ -24,6 +24,126 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 'agro-fertilizer',
+    title: 'Agro: Fertilizer Company Management',
+    description:
+      'Comprehensive web application for fertilizer companies to manage farmer relationships, track crop health, record sales visits, manage purchases, and monitor revenue and lending activities.',
+    image:
+      'https://github.com/user-attachments/assets/5ae84663-9bfc-4004-9623-006c742f3a96',
+    liveLink: 'https://fertiliser-app.netlify.app/',
+    githubLink: 'https://github.com/vignesh-kumar-d/fertilizer-app',
+    technologies: [
+      { name: 'Next.js 15', color: 'text-black' },
+      { name: 'React 19', color: 'text-blue-500' },
+      { name: 'TypeScript', color: 'text-blue-600' },
+      { name: 'Firebase', color: 'text-yellow-500' },
+      { name: 'Tailwind CSS', color: 'text-cyan-500' },
+      { name: 'PWA', color: 'text-blue-500' },
+    ],
+    features: [
+      'Farmer management with crop health monitoring',
+      'Sales tracking and revenue analytics dashboard',
+      'Role-based access control (Admin/Employee)',
+      'Progressive Web App with offline support',
+      'Real-time data sync and image management',
+    ],
+  },
+  {
+    id: 'enterprise-pos',
+    title: 'Enterprise POS System',
+    description:
+      'POS application deployed with React and React Native across 800+ stores with 99.9% uptime and offline-first workflows handling $50K+ daily transactions.',
+    image:
+      'https://github.com/user-attachments/assets/5ae84663-9bfc-4004-9623-006c742f3a96',
+    liveLink: 'https://d-vignesh-kumar.netlify.app',
+    githubLink: 'https://github.com/vignesh-kumar-d',
+    technologies: [
+      { name: 'React', color: 'text-blue-500' },
+      { name: 'React Native', color: 'text-blue-600' },
+      { name: 'Node.js', color: 'text-green-600' },
+      { name: 'PostgreSQL', color: 'text-blue-700' },
+      { name: 'WebSocket', color: 'text-purple-500' },
+    ],
+    features: [
+      'Serving million+ customers daily',
+      '99.9% uptime with offline-first workflows',
+      'Integrated 5+ payment gateways',
+      'Real-time inventory sync reducing stock discrepancies by 45%',
+      'Boosted Core Web Vitals and SEO with Next.js edge SSR',
+    ],
+  },
+  {
+    id: 'shopup-cms',
+    title: 'ShopUp CMS Platform',
+    description:
+      'Supported 50K+ SKUs with admin panel for 200+ daily users; integrated GraphQL with React and real-time analytics dashboards.',
+    image:
+      'https://github.com/legendvi/module_fedration_tierOneSaas/assets/41253273/aa020476-7868-40de-98b5-fbcfc23c07bc',
+    githubLink: 'https://github.com/Vignesh-kumar-D/tierone',
+    technologies: [
+      { name: 'React', color: 'text-blue-500' },
+      { name: 'GraphQL', color: 'text-pink-500' },
+      { name: 'Module Federation', color: 'text-blue-400' },
+      { name: 'Real-time Analytics', color: 'text-green-500' },
+    ],
+    features: [
+      '50K+ SKUs management',
+      '200+ daily active users',
+      'Real-time analytics dashboards',
+      'Role-based access control (5 tiers)',
+      'Reduced reporting time by 60%',
+    ],
+  },
+  {
+    id: 'zeno-app',
+    title: 'Zeno – Zero-Based Budgeting App',
+    description:
+      'Full-stack Next.js application with serverless architecture designed for zero-based budgeting and group expense management.',
+    image:
+      'https://github.com/user-attachments/assets/6b2730c0-2323-4ca8-96fb-f5b7a45d3ad6',
+    liveLink: 'https://finz-wizard.vercel.app/login',
+    githubLink: 'https://github.com/Vignesh-kumar-D/finWizard',
+    technologies: [
+      { name: 'Next.js', color: 'text-black' },
+      { name: 'Serverless', color: 'text-green-600' },
+      { name: 'PWA', color: 'text-blue-500' },
+      { name: 'Google Auth', color: 'text-red-500' },
+    ],
+    features: [
+      'Zero-based budgeting system',
+      'Group expense management',
+      'Google login and OTP authentication',
+      'Responsive PWA with service workers',
+      'Scalable serverless backend',
+    ],
+  },
+  {
+    id: 'shorts-blocker',
+    title: 'Shorts & Reels Blocker',
+    description:
+      'Chrome extension to combat short-form content addiction by blocking YouTube Shorts and Instagram Reels, helping users regain control of their attention.',
+    image:
+      'https://github.com/user-attachments/assets/adb3a4c6-ac1f-4326-b8c0-e9fb3a939442',
+    chromeLink: 'https://tinyurl.com/shorts-reels-blocker',
+    githubLink: 'https://github.com/Vignesh-kumar-D/shorts_reel_blocker',
+    technologies: [
+      { name: 'JavaScript', color: 'text-yellow-400' },
+      { name: 'Chrome API', color: 'text-blue-500' },
+      { name: 'DOM Manipulation', color: 'text-green-500' },
+      { name: 'Rules Engine', color: 'text-purple-500' },
+    ],
+    features: [
+      '250+ active users with 4.5+ rating',
+      'Customizable blocking rules',
+      '99.9% accuracy with DOM mutation observers',
+      'Zero data collection',
+      'Offline functionality',
+    ],
+  },
+];
+
+const oldProjects: Project[] = [
+  {
     id: 'homesquare',
     title: 'HomeSquare Expense',
     description:
@@ -64,29 +184,6 @@ const projects: Project[] = [
       'Zero-coupling architecture',
       'Automated CI/CD pipeline',
       'CloudFront distribution',
-    ],
-  },
-  {
-    id: 'shorts-blocker',
-    title: 'Shorts & Reels Blocker',
-    description:
-      'Chrome extension to combat short-form content addiction by blocking YouTube Shorts and Instagram Reels, helping users regain control of their attention.',
-    image:
-      'https://github.com/user-attachments/assets/6b2730c0-2323-4ca8-96fb-f5b7a45d3ad6',
-    chromeLink:
-      'https://chromewebstore.google.com/detail/shorts-reels-blocker/hddclpebfglijbmapdjminkkcafchkmb?utm_source=ext_app_menu',
-    githubLink: 'https://github.com/Vignesh-kumar-D/shorts-blocker',
-    technologies: [
-      { name: 'JavaScript', color: 'text-yellow-400' },
-      { name: 'Chrome API', color: 'text-blue-500' },
-      { name: 'HTML', color: 'text-orange-500' },
-      { name: 'CSS', color: 'text-blue-400' },
-    ],
-    features: [
-      'Content filtering algorithm',
-      'Real-time DOM manipulation',
-      'Zero data collection',
-      'Offline functionality',
     ],
   },
   {
@@ -230,6 +327,14 @@ const Projects = () => {
     threshold: 0.1,
     triggerOnce: true,
   });
+  const [activeTab, setActiveTab] = useState<'notable' | 'previous'>('notable');
+
+  const tabs = [
+    { id: 'notable', label: 'Notable Projects', count: projects.length },
+    { id: 'previous', label: 'Previous Work', count: oldProjects.length },
+  ];
+
+  const currentProjects = activeTab === 'notable' ? projects : oldProjects;
 
   return (
     <section className="min-h-screen py-20 bg-base-100">
@@ -244,13 +349,40 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-base-content max-w-2xl mx-auto">
-            A showcase of my key projects, demonstrating expertise in frontend
-            development, architecture design, and problem-solving.
+            A showcase of my key projects, demonstrating expertise in enterprise
+            POS systems, micro-frontend architecture, full-stack development,
+            and innovative Chrome extensions.
           </p>
         </motion.div>
 
+        {/* Tab Navigation */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={inView ? { y: 0, opacity: 1 } : {}}
+          transition={{ delay: 0.2 }}
+          className="flex justify-center mb-12"
+        >
+          <div className="tabs tabs-boxed bg-base-200">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                className={`tab ${
+                  activeTab === tab.id
+                    ? 'tab-active bg-primary text-primary-content'
+                    : ''
+                }`}
+                onClick={() => setActiveTab(tab.id as 'notable' | 'previous')}
+              >
+                {tab.label}
+                <span className="badge badge-sm ml-2">{tab.count}</span>
+              </button>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {currentProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
